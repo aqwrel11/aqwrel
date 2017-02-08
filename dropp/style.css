@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'bebas';
+  src: url("bebas/BebasNeue Regular.otf"); }
+header {
+  height: 110px;
+  line-height: 110px;
+  font-family: bebas; }
+  header nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between; }
+    header nav a {
+      font-size: 70px;
+      color: #000; }
+      header nav a span {
+        color: #fd5433; }
+      header nav a:hover {
+        text-decoration: none;
+        color: #000; }
+    header nav li {
+      display: inline-block;
+      font-size: 17px;
+      padding: 0 15px; }
+      header nav li .act {
+        background: #fd5433; }
+
+#home {
+  height: 600px;
+  background: url(img/paral.jpg) center 0 repeat fixed;
+  min-height: 600px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: bebas;
+  flex-direction: column; }
+  #home h2 {
+    font-family: bebas;
+    font-size: 120px;
+    color: white; }
+  #home button {
+    background: #fd5433;
+    border: none;
+    width: 280px;
+    height: 65px;
+    padding: 7px 0;
+    color: white;
+    font-size: 32px; }
+
+.services {
+  min-height: 600px;
+  font-family: bebas; }
+  .services h3 {
+    text-align: center;
+    color: #fd5433;
+    margin-bottom: 70px;
+    font-weight: bold; }
+  .services .ser-wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid;
+    border-bottom: 1px solid; }
+    .services .ser-wrap img {
+      margin-top: 50px; }
+    .services .ser-wrap .bran {
+      flex-basis: 380px;
+      text-align: center; }
+    .services .ser-wrap h5 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 25px; }
+    .services .ser-wrap p {
+      margin-bottom: 70px;
+      font-style: italic;
+      font-size: 15px; }
+
+.port {
+  min-height: 600px;
+  font-family: bebas; }
+  .port h3 {
+    text-align: center;
+    color: #fd5433;
+    margin-bottom: 70px;
+    font-weight: bold; }
+  .port #owl-demo .item {
+    width: 280px; }
+    .port #owl-demo .item img {
+      max-width: 280px;
+      height: 240px; }
+  .port #owl-demo span {
+    display: none; }
+  .port #owl-demo2 {
+    margin-top: -30px; }
+    .port #owl-demo2 .item {
+      width: 280px; }
+      .port #owl-demo2 .item img {
+        max-width: 280px;
+        height: 240px; }
+    .port #owl-demo2 span {
+      display: none; }
+
+.about {
+  min-height: 600px;
+  font-family: bebas; }
+  .about h3 {
+    text-align: center;
+    color: #fd5433;
+    margin-bottom: 70px;
+    font-weight: bold; }
+  .about .accordion {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-around; }
+    .about .accordion .fle {
+      text-align: center; }
+    .about .accordion .content {
+      text-align: center;
+      background: #fd5433;
+      height: 200px; }
+      .about .accordion .content h5 {
+        margin-top: 25px;
+        padding-top: 45px;
+        position: relative;
+        font-size: 25px; }
+        .about .accordion .content h5:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid white;
+          position: absolute;
+          top: 0;
+          left: 47%; }
+      .about .accordion .content p {
+        padding: 0 15px;
+        color: white; }
+
+.contact {
+  min-height: 570px;
+  font-family: bebas;
+  text-align: center; }
+  .contact h3 {
+    text-align: center;
+    color: #fd5433;
+    margin-bottom: 70px;
+    font-weight: bold; }
+  .contact .parat {
+    height: 570px;
+    background: url(img/BG.jpg) center 0 no-repeat fixed;
+    background-size: 100% 100%; }
+  .contact input[type="text"] {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    color: #fd5433;
+    font-size: 15px;
+    width: 30%;
+    padding: 7px;
+    margin-left: 30px; }
+    .contact input[type="text"]:focus {
+      color: #fd5433;
+      border: 1px solid #000000; }
+  .contact #inp {
+    width: 63%;
+    margin-top: 20px;
+    height: 200px; }
+  .contact form {
+    margin-top: 5%; }
+  .contact button {
+    background: #fd5433;
+    border: none;
+    width: 63%;
+    margin-left: 30px;
+    color: white;
+    font-size: 20px; }
+
+/*# sourceMappingURL=style.css.map */

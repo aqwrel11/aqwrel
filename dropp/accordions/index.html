@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Делаем вертикальное меню аккордеон</title>
+<link rel="stylesheet" type="text/css" href="css/style_accordeon.css" />
+<style>
+
+h2 {
+color: #002850; font-size: 30px; font-weight: normal; 
+padding: 45px 0 15px;cursor:pointer;
+}
+.accordion {
+border: 1px solid #ddd; border-top: none; margin: 10px 0; 
+left: 390px;
+float: center; width: 470px; position: relative;
+}
+.accordion a { 
+display: block; text-decoration: none;
+
+
+}
+.accordion h2, .accordion a{
+background-color: #fff; 
+background-image: url(gradient.jpg);
+background-image: -moz-linear-gradient(bottom, #f1f1f1, #fff);
+background-image: -ms-linear-gradient(bottom, #f1f1f1, #fff);
+background-image: -o-linear-gradient(bottom, #f1f1f1, #fff);
+background-image: -webkit-linear-gradient(bottom, #f1f1f1, #fff);
+background-image: linear-gradient(bottom, #f1f1f1, #fff); 
+border-top: 1px solid #ddd;
+color: #222; font: 14px/30px 'Verdana', sans-serif; 
+height: 30px; margin: 0; padding: 0; text-indent: 10px;
+}
+p {
+color: #555; font: 12px/18px 'Verdana', sans-serif; 
+padding: 20px 10px;
+}
+
+</style>
+</head>
+<body>
+<header>
+<h1 align="center">Делаем вертикальное меню аккордеон</h1>
+<a href="http://goldserfer.ru/delaem-vertikalnoe-menyu-akkordeon/" class="stuts">Вернутся к статье</a>
+</header>
+<br/>
+<center><h2><span lang="ru">Меню аккордеон с использованием CSS3 и jQuery скрипта</h2></center>
+<div id="content" style="height:800px">	
+
+<div id="accordion-js" class="accordion">
+	<h2>Заголовок 1</h2>
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.sis luctus, metus</p>
+	<h2>Заголовок 2</h2>
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.sis luctus, metus</p>
+	<h2>Заголовок 3</h2>
+	<div>
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.sis luctus, metus</p>
+		<p>Pellentesque habitant morbi trisique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.sis luctus, metus</p>
+	</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#accordion-js').find('h2').click(function(){
+	    $(this).next().stop().slideToggle();
+	}).next().stop().hide();
+});
+</script>
+</body>
+</html>
