@@ -1,0 +1,529 @@
+/* STRUCTURE */
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust:none;
+  }
+
+  body {
+  }
+
+  .flowtime {
+    font-size: 0;       /* removes the white spaces between inline-block elements */
+                /* WARNING! this technique does non remove the white-space in Safari for Windows */
+                /* unless you use this hack: http://absolide.tumblr.com/post/36597829434/safari-inline-block-white-spaces-bug-fix */
+                /* you can use any other white-space removal technique as per: http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
+    white-space: nowrap;  /* disable the wrapping of the space between articles */
+    width: 100%;
+    height: 100%;
+        -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        -ms-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(.77, .10, .22, 1);
+       transition:         transform 0.5s cubic-bezier(.77, .10, .22, 1);
+
+  }
+
+  .flowtime.no-transition {
+    -webkit-transition: -webkit-transform 0s;
+       transition: transform 0s;
+  }
+
+/* SECTIONS (COLUMNS) */
+
+  /* base section */
+  .ft-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0);
+  }
+
+  /* section and section thumb alignment */
+  .ft-section,
+  .ft-section-thumb {
+    font-size: 16px;    /* reset the regular font size, in the old way… */
+    font-size: 1rem;    /* and in the modern way */
+    white-space: normal;
+    display: inline-block;  /* let the block elements stay on the same line */
+                /* used together the white-space: nowrap; declaration */
+                /* the elements doesn't break the line */
+    vertical-align: top;  /* fix the default alignement for the inline-block elements (default: baseline) */
+                /* if different from "top" set Flowtime.slideWithPx(true) */
+  }
+
+  .ft-scroll-the-section .ft-section {
+    transition: transform 0.5s cubic-bezier(.77, .10, .22, 1);
+  }
+
+  .ft-cross .ft-section,
+  .ft-cross .ft-section-thumb {
+    font-size: 0;
+    line-height: 1;
+    white-space: nowrap;
+    display: block;
+  }
+
+/* PAGES */
+
+  /* base page */
+  .ft-page {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: auto;
+    /**
+     * GPU acceleration disabled to drop down memory consuption on tablet and smartphones
+     */
+    /*
+        -ms-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    */
+  }
+
+  .ft-cross .ft-page,
+  .ft-cross .ft-page-thumb {
+    font-size: 16px;    /* reset the regular font size, in the old way… */
+    font-size: 1rem;    /* and in the modern way */
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /**
+   * GPU acceleration enabled only on the pages involved in the slide animation to ensure no glitches on transition
+   */
+  .ft-page.actual,
+  .ft-page.actual-out {
+    z-index: 100;
+        -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+
+  /* pages in overview mode */
+  .ft-overview .ft-page {
+    opacity: 0.5;
+    cursor: pointer;
+    -webkit-transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+       transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+        -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+        -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+
+  .ft-overview .ft-page * {
+    pointer-events: none;
+  }
+
+/* JAVASCRIPT NAVIGATION HOOKS */
+
+  .ft-absolute-nav {
+    overflow: hidden;
+  }
+
+
+  .ft-absolute-nav .flowtime {
+    position: absolute;
+  }
+
+/* EYE CANDY OVERRIDABLE CLASSES AND PROPERTIES */
+
+/* FRAGMENTS */
+
+  .ft-fragment {
+    opacity: 0;
+    -webkit-transition: all 0.3s cubic-bezier(.77, .10, .22, 1);
+       transition: all 0.3s cubic-bezier(.77, .10, .22, 1);
+        -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+
+  .ft-fragment.revealed.step {
+    opacity: 0.3;
+  }
+
+  .ft-fragment.revealed.shy {
+    opacity: 0;
+  }
+
+  .ft-fragment.revealed,
+  .ft-fragment.revealed-temp,
+  .ft-fragment.revealed.actual {
+    opacity: 1;
+  }
+
+/* DEFAULT PROGRESS */
+
+  .ft-default-progress {
+    position: fixed;
+    bottom: 16px;
+    bottom: 1rem;
+    right: 16px;
+    right: 1rem;
+    z-index: 1000;
+    opacity: 0.3;
+    -webkit-transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+       transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+  }
+
+  .ft-default-progress:hover {
+    opacity: 1;
+  }
+
+  /* default progress disappears when in overview mode */
+  .ft-overview .ft-default-progress {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* default progress page thumb */
+  .ft-page-thumb {
+    box-sizing: border-box;
+    width: 1rem;
+    height: 0.7rem;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    background-color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    -webkit-transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+       transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+  }
+
+  .ft-page-thumb:hover {
+    background-color: rgba(255,255,255,0.7);
+  }
+
+  .ft-page-thumb.actual {
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid #ffffff;
+  }
+
+  /* overview mode page highlighting */
+
+  .ft-overview .ft-page.actual {
+    opacity: 0.25;
+  }
+
+  .ft-overview .ft-page.hilite {
+    opacity: 1;
+  }
+
+  .ft-overview .ft-page:hover {
+    opacity: 1;
+  }
+
+/* HARDWARE ACCELERATED ELEMENTS */
+/* I've not used * because causes issues with current Chrome */
+
+  img {
+        -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        -ms-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+
+/* PARALLAX MANAGEMENT */
+
+  .parallax {
+    position: relative;
+    -webkit-transition: all 0.5s cubic-bezier(.50, .10, .50, 1);
+       transition: all 0.5s cubic-bezier(.50, .10, .50, 1);
+  }
+
+  .ft-overview .parallax {
+        -ms-transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+  }
+
+
+.first{
+  width: 100%;
+  height: 100%; 
+  font-family: GothamProBlack;
+  padding-top: 30px;
+  position: relative;
+}
+.first span{
+  font-size: 24px;
+  color: white;
+  padding-left: 6px;
+  letter-spacing: 1px;
+}
+
+.first img{
+  margin-top: -8px;
+}
+.texr{
+  position:absolute;
+  top:35%;
+  text-align: center;
+  width: 85%;
+}
+.texr .roz{
+  color:#fc645f;
+}
+.texr span{
+  font-size: 45px;
+  text-transform: uppercase;
+}
+.texr p{
+  font-size: 18px;
+  color:white;
+  font-family: GothamProRegular;
+}
+h1 > span:before, h1 > span:after {
+    content:"";
+    width: 10%;
+    border-top: 5px solid #504d4d;
+    position: absolute;
+    right: 83%;
+    top: 17%;
+    margin-top: -2px;
+}
+h1 > span:after {
+    left: 83%;
+}
+
+.texr button{
+  margin-top: 10%;
+  width: 200px;
+  height: 50px;
+  background: none;
+  color: #fc645f;
+  font-size: 25px;
+  font-family: GothamProRegular;
+  border: 2px solid #fc645f;
+}
+
+.two{
+  width: 100%;
+  height: 100%;
+}
+.two h2{
+  text-transform: uppercase;
+  text-align: center;
+  font-family: GothamProRegular;
+  color: #cbcbcb;
+}
+.two h2 .roz{
+  color: #fc645f;
+
+}
+.two p{
+  text-align: center;
+  color: #cbcbcb;
+  font-family: GothamProRegular;
+  font-size: 12px;
+}
+.two .mar{
+  margin-top: 100px;
+}
+#hexagon {
+    font-size: 120px;
+    width: 1em;
+    height: 0.58em;
+    background: #fc4943;
+    color: #fc4943;
+    display: block;
+    position: relative;
+    left: 35%;
+}
+
+#hexagon:before {
+    content: "";
+    position: absolute;
+    top: -0.25em;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-color: inherit;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.25em solid;
+}
+
+#hexagon:after {
+    content: "";
+    position: absolute;
+    bottom: -0.25em;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-color: inherit;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-top: 0.25em solid;
+}
+
+#hexagon:hover {
+    background-color: #fe8682;
+    color: #fe8682;
+}
+#hexagon img{
+  position: absolute;
+  right: 35%;
+  top: 25%;
+
+}
+.two h3{
+  padding-top: 15px;
+  
+}
+.mar {
+  text-align: center;
+  
+}
+.two .press{
+  text-align: center;
+  margin-top: 10%;   
+}
+.three{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  
+}
+.three h3{
+  color: white;
+  text-transform: uppercase;
+  font-family: GothamProBold;
+  font-size: 35px;
+  margin-top: 20%;
+}
+.three h3 .rez{
+  color: #fe8682;
+}
+.three button{
+  margin-top: 10%;
+  width: 200px;
+  height: 50px;
+  background: none;
+  color: #fc645f;
+  font-size: 25px;
+  font-family: GothamProRegular;
+  border: 2px solid #fc645f;
+}
+
+.four{
+ height: 100%;
+ width: 100%;
+ background: #f2f2f2;
+
+}
+.four .rez{
+  color:#fc645f;
+}
+.four h3{
+  text-align: center;
+  font-size: 30px;
+
+}
+.wrap-pc{
+	position: relative;
+	margin-top: 10%;
+}
+.ipad{
+	background: url("img/la.png") 100%; 
+	width: 135px;
+	height: 185px;
+	position: absolute;
+	top: 145px;
+	left: 50%;
+	z-index: 99;
+	
+}
+.pc{
+	width: 385px;
+	height: 300px;
+	position: absolute;
+	
+}
+.mac{
+	width: 295px;
+	height: 195px;
+	position: absolute;
+	top: 130px;
+	left: -18%;
+	
+}
+.pc img{
+	width: 355px;
+	height: 200px;
+	margin-left: 15px;
+	margin-top: 12px;
+}
+.mac img{
+	height: 155px;
+	width: 220px;
+	margin-left: 38px;
+	margin-top: 12px;
+}
+.ipad img{
+	height: 150px;
+	width: 115px;
+	margin-left: 10px;
+	margin-top: 12px;
+}
+.t-wrap{
+	margin-top: 10%;
+}
+.t-wrap h4{
+	color: #868686;
+	border-left: 10px solid #fc635e;
+	font-size: 30px;
+	padding-left: 10px;
+}
+.t-wrap button{
+	width: 175px;
+	height: 45px;
+	background:  #fc635e;
+	color: white;
+	margin-top: 10%;
+	border:none;
+	border-radius: 5px;
+	font-size: 17px;
+}
+.book-wrap{
+	margin-top: 10%;
+}
+.five{
+	height: 100%;
+	background: #f2f2f2;
+}
+.six{
+	height: 100%;
+	width: 100%;
+}
+.six #hexagon{
+	top:-95%;
+	left:50%;
+}
+.foot{
+	height: 50%;
+	width: 100%;
+	text-align: center;
+	color: #fc635e;
+
+}
+.foot h2{
+	font-size: 50px;
+	font-family: GothamProBold;
+}
