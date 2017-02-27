@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script src="js/circle-progress.js"></script>
+	<script src="https://use.fontawesome.com/accb5de662.js"></script>
+</head>
+<body>
+	
+	<header class="parallax-window" data-parallax="scroll" data-image-src="img/firewatch.jpg">
+
+		<div class="trio-l"></div>
+
+		<div class="trio-r"></div>
+	
+	</header>
+
+	<section class="info">
+		<div class="col-sm-6">
+		
+		<div class="about">
+			
+			<h2>Обо мне</h2>
+
+			<img src="img/homer.jpg" alt="">
+
+			<h3>Кто я</h3>
+
+			<p>
+				 Я веб разработчик из Днепропетровска. Мне 19 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+				 Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво
+			</p>
+
+		</div>
+		</div>
+		<div class="col-sm-6">
+		<div class="skill">
+			
+			<h2>Чем я могу быть вам полезен</h2>
+
+			<p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
+
+			<h3>Frontend</h3>
+
+			<div id="circle">
+				<p>HTML5</p>
+			</div>
+
+			<div id="circle2">
+				<p>CSS3</p>
+			</div>
+
+			<div id="circle3">
+				<p>JavaScript/JQuery</p>
+			</div>
+
+			<h3>Backend</h3>
+
+			<div id="circle4">
+				<p>npm</p>
+			</div>
+
+			<div id="circle5">
+				<p>PHP</p>
+			</div>
+
+			<div id="circle6">
+				<p>mySQL</p>
+			</div>
+
+			<h3>WorkFlow</h3>
+			<div id="circle7">
+				<p>Git</p>
+			</div>
+
+			<div id="circle8">
+				<p>Gulp</p>
+			</div>
+
+			<div id="circle9">
+				<p>Jade/Pug</p>
+			</div>
+
+		</div>
+		</div>
+	</section>
+
+	<section class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1321.147970661965!2d35.01949665816857!3d48.527559994814155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDMxJzM5LjIiTiAzNcKwMDEnMTQuMSJF!5e0!3m2!1sru!2sua!4v1488212853094" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</section>
+
+	<footer>
+		
+		<p>&copy Pasha Kisil
+			<a href=""><i class="fa fa-vk" aria-hidden="true"></i></a>
+    		<a href=""><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+    		<a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		</p>
+
+	</footer>
+
+
+
+
+	<script>
+		  $('#circle').circleProgress({
+		    value: 0.88,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+		  $('#circle2').circleProgress({
+		    value: 0.80,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+		  $('#circle3').circleProgress({
+		    value: 0.44,
+		    size: 80,
+		    fill: {
+		      gradient: ["orange"]
+		    }
+		  });
+		  $('#circle4').circleProgress({
+		    value: 0.32,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+		  $('#circle5').circleProgress({
+		    value: 0.20,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+		  $('#circle6').circleProgress({
+		    value: 0.20,
+		    size: 80,
+		    fill: {
+		      gradient: ["orange"]
+		    }
+		  });
+		  $('#circle7').circleProgress({
+		    value: 0.60,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+		  $('#circle8').circleProgress({
+		    value: 0.40,
+		    size: 80,
+		    fill: {
+		      gradient: ["orange"]
+		    }
+		  });
+		  $('#circle9').circleProgress({
+		    value: 0.30,
+		    size: 80,
+		    fill: {
+		      gradient: [ "orange"]
+		    }
+		  });
+	</script>
+
+
+	<script src="parallax.js"></script>
+	
+	<script>
+		$('.parallax-window').parallax({imageSrc: 'img/firewatch.jpg'})
+	</script>
+	<script>
+	  $(window).on('load', function () {
+    $preloader = $('.loaderArea'),
+      $loader = $preloader.find('.loader');
+    $loader.fadeOut();
+    $preloader.delay(350).fadeOut('slow');
+  });
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #FEDCC8;
+}
+
+.parallax {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer {
+  position: absolute;
+  width: 3000px;
+  height: 100%;
+  left: 50%;
+  margin-left: -1500px;
+  bottom: 0%;
+}
+
+.parallax__layer img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.my-block{
+  font-family: 'Roboto', sans-serif;;
+  width: 30%;
+  position: relative;
+  height: 50vh;
+  background: rgba(176, 132, 132, 0.5);
+  margin-top: 10%;
+  margin-left: 35%;
+  text-align: center;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+.my-block img{
+  margin-top: 5%;
+  height: 100px;
+  max-width: 100%;
+  border-radius: 100px;
+}
+.my-block a{
+  font-size: 35px;
+  color:white;
+  margin-left: 15px;
+}
+.my-block a:hover{
+  color:blue;
+  transition:1s all;
+}
+button{
+  position: absolute;
+  width: 33%;
+  bottom: 0;
+  background: rgba(176, 132, 132, 0.8);
+  border:none;
+  height: 50px;
+  font-weight: bold;
+}
+.work{
+  left: 0;
+}
+.about{
+  left: 33.33%;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+
+}
+.blog{
+  right: 0;
+}
+button:hover{
+  background: rgba(176, 132, 132, 0.45);
+  transition:1s all;
+}
+.loaderArea {
+  background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 100000;
+}
+.loader {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+}
+ 
+.loader:before,
+.loader:after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  border: 8px solid rgba(255,255,255,.5);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+}
+ 
+.loader:before {
+  animation: animate 2s infinite linear;
+}
+ 
+@keyframes animate {
+  0% {
+    transform: rotate(0) skew(0);
+  }
+   
+  100% {
+    transform: rotate(180deg) skew(360deg);
+  }
+}
+ 
+ 
+.loader:after {
+  animation: animate2 2s infinite linear;
+}
+ 
+@keyframes animate2 {
+  0% {
+    transform: rotate(0) skew(0);
+  }
+   
+  100% {
+    transform: rotate(-180deg) skew(-360deg);
+  }
+}
+
