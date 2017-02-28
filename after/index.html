@@ -162,6 +162,9 @@
     		<a href=""><i class="fa fa-github-alt" aria-hidden="true"></i></a>
     		<a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 		</p>
+
+		<a href="" id="toTop"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
+
 		</div>
 
 		<div class="col-sm-6 col-xs-6">	
@@ -260,5 +263,32 @@
   </script>
   <script src="js/classie.js"></script>
 	<script src="js/demo1.js"></script>
+	<script type="text/javascript">
+	 
+	$(function() {
+	 
+	$(window).scroll(function() {
+	 
+	if($(this).scrollTop() != 0) {
+	 
+	$('#toTop').fadeIn();
+	 
+	} else {
+	 
+	$('#toTop').fadeOut();
+	 
+	}
+	 
+	});
+	 
+	$('#toTop').click(function() {
+	 
+	$('body,html').animate({scrollTop:0},800);
+	 
+	});
+	 
+	});
+	 
+</script>
 </body>
 </html>

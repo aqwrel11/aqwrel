@@ -289,3 +289,17 @@ footer button{
 	right: 35px;
 	top:35px;
 }
+#toTop {
+	width:50px;
+	border-radius: 50%;
+	border:none;
+	background:rgba(89, 3, 3, 0.5);;
+	text-align:center;
+	padding:5px;
+	position:fixed;
+	bottom:10px; /* отступ кнопки от нижнего края страницы*/
+	right:50%;
+	cursor:pointer;
+	display:none;
+	color:white;
+	}
