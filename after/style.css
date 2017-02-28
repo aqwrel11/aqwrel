@@ -173,7 +173,6 @@ header{
 #map{
 	width: 100%;
 	min-height: 80vh;
-	z-index: -1;
 }
 .loaderArea {
   background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
@@ -208,7 +207,7 @@ header{
 
 footer{
 	text-align: center;
-	background: rgba(250, 125, 47, 0.5);;
+	background: rgba(250, 125, 47, 1);
 	min-height: 20vh;
 	z-index: 2;
 	color: white;
