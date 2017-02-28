@@ -2,20 +2,60 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Обо мне</title>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="aos-master/dist/aos.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
+	<link rel="stylesheet" href="snazzy-info-window.min.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="snazzy-info-window.min.js"></script>
+	 <script src="aos-master/dist/aos.js"></script>
 	<script src="js/circle-progress.js"></script>
 	<script src="https://use.fontawesome.com/accb5de662.js"></script>
+	 <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(48.530551, 35.027136), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [	{		"featureType":"landscape",		"stylers":[			{				"hue":"#FFAD00"			},			{				"saturation":50.2			},			{				"lightness":-34.8			},			{				"gamma":1			}		]	},	{		"featureType":"road.highway",		"stylers":[			{				"hue":"#FFAD00"			},			{				"saturation":-19.8			},			{				"lightness":-1.8			},			{				"gamma":1			}		]	},	{		"featureType":"road.arterial",		"stylers":[			{				"hue":"#FFAD00"			},			{				"saturation":72.4			},			{				"lightness":-32.6			},			{				"gamma":1			}		]	},	{		"featureType":"road.local",		"stylers":[			{				"hue":"#FFAD00"			},			{				"saturation":74.4			},			{				"lightness":-18			},			{				"gamma":1			}		]	},	{		"featureType":"water",		"stylers":[			{				"hue":"#00FFA6"			},			{				"saturation":-63.2			},			{				"lightness":38			},			{				"gamma":1			}		]	},	{		"featureType":"poi",		"stylers":[			{				"hue":"#FFC300"			},			{				"saturation":54.2			},			{				"lightness":-14.4			},			{				"gamma":1			}		]	}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(48.530551, 35.027136),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+        </script>
 </head>
 <body>
 	
 	<header class="parallax-window" data-parallax="scroll" data-image-src="img/firewatch.jpg">
 
-		<div class="trio-l"></div>
+		<div class="trio-l hidden-xs"></div>
 
 		<div class="trio-r"></div>
 	
@@ -24,7 +64,7 @@
 	<section class="info">
 		<div class="col-sm-6">
 		
-		<div class="about">
+		<div class="about" data-aos="fade-right">
 			
 			<h2>Обо мне</h2>
 
@@ -40,7 +80,7 @@
 		</div>
 		</div>
 		<div class="col-sm-6">
-		<div class="skill">
+		<div class="skill" data-aos="fade-left">
 			
 			<h2>Чем я могу быть вам полезен</h2>
 
@@ -91,17 +131,33 @@
 		</div>
 	</section>
 
-	<section class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1321.147970661965!2d35.01949665816857!3d48.527559994814155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDMxJzM5LjIiTiAzNcKwMDEnMTQuMSJF!5e0!3m2!1sru!2sua!4v1488212853094" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+	<section id="map">	
+		
 	</section>
 
 	<footer>
-		
-		<p>&copy Pasha Kisil
+		<div class="col-sm-6 ff">
+		<p>
+			<a href="#">Мои работы</a>
+			<a href="#">Обо мне</a>
+			<a href="#">Блог</a>
+		</p>
+		<p>
 			<a href=""><i class="fa fa-vk" aria-hidden="true"></i></a>
     		<a href=""><i class="fa fa-github-alt" aria-hidden="true"></i></a>
     		<a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 		</p>
+		<button onclick="document.getElementById(map).style.z-index = '99"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+		</div>
+
+		<div class="col-sm-6">
+			
+			<p>Skype: pasha.kisil</p>
+			<p>+380994901224</p>
+			<p>kisilwww@gmail.com</p>
+			<p>Днепропетровск, пр.Мира 6</p>
+
+		</div>
 
 	</footer>
 
@@ -188,5 +244,8 @@
     $preloader.delay(350).fadeOut('slow');
   });
 	</script>
+	<script>
+    AOS.init();
+  </script>
 </body>
 </html>
