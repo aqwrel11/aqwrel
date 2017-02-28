@@ -172,7 +172,7 @@ header{
 }
 #map{
 	width: 100%;
-	min-height: 80vh;
+	min-height: 60vh;
 }
 .loaderArea {
   background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
