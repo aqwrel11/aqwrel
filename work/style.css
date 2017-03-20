@@ -99,3 +99,41 @@ header{
 a{
 	text-decoration: none;
 }
+
+footer{
+  text-align: center;
+  background: rgba(250, 125, 47, 1);
+  min-height: 20vh;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+}
+footer a{
+  color: white;
+  padding-left: 20px;
+}
+footer a:hover{
+  color: blue;
+  text-decoration: none;
+  transition: 1s all;
+}
+footer .fa{
+  font-size: 25px;
+}
+ 
+footer .ff{
+  margin-top: 30px;
+}
+footer button{
+  border:none;
+  background: none;
+  position: absolute;
+  top:-25px;
+  right: 0;
+}
+.portfolio-slider__projects-container .portfolio-projects .project .word, .portfolio-slider__projects-container .portfolio-projects .project .letter {
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: middle;
+    display: inline-flex;
+}
