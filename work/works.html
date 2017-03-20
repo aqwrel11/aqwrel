@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Мои работы</title>
+		<meta content="Pasha Kisil" name="author">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<meta content="ie=edge" http-equiv="x-ua-compatible">
+		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/style6.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="assets/js/app.js" defer></script>
+		<script src="https://use.fontawesome.com/accb5de662.js"></script>
+
+		<script src="js/modernizr.custom.js"></script>
+		<!--[if lt IE 9]>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="../browsehappy.com/default.htm">обновите его</a></p>
+		<![endif]-->
+
+		<header class="parallax-window" data-parallax="scroll" data-image-src="img/firewatch.jpg">
+		<div class="overlay overlay-door">
+			<button type="button" class="overlay-close">Close</button>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Главная</a></li>
+					<li><a href="/index.html">Обо мне</a></li>
+					<li><a href="#">Работы</a></li>
+					<li><a href="#">Блог</a></li>
+				</ul>
+			</nav>
+		</div>
+				<button id="trigger-overlay" type="button"></button>
+
+		<div class="trio-l hidden-xs"></div>
+
+		<div class="trio-r"></div>
+	
+	</header>
+
+		<section class="portfolio-slider">
+			<div class="portfolio-slider__module portfolio-slider__preview-container"><img src="assets/img/works/first.png" class="portfolio-preview active"><img src="assets/img/works/second.png" class="portfolio-preview"><img src="assets/img/works/third.png" class="portfolio-preview"></div>
+			<div class="portfolio-slider__module portfolio-slider__projects-container">
+				<div class="portfolio-projects">
+					<div class="project active">
+						<div class="project__inner">
+							<h3 class="sidestripes project__title">Elite OPS energy</h3>
+							<p class="project__tech">Описание</p>
+							<a href="../google.com/default.htm" target="_blank" class="project__link">Посмотреть сайт</a>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project__inner">
+							<h3 class="sidestripes project__title">Интернет магазин СоюзАгроИнвест</h3>
+							<p class="project__tech">Описание</p>
+							<a href="../google.com/default.htm" target="_blank" class="project__link">Посмотреть сайт</a>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project__inner">
+							<h3 class="sidestripes project__title">САЙТ КАТАЛОГ СВАДЕБНЫХ УСЛУГ</h3>
+							<p class="project__tech">Описание</p>
+							<a href="../google.com/default.htm" target="_blank" class="project__link">Посмотреть сайт</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="portfolio-slider__module portfolio-slider__navigation-container">
+				<div class="navigation-box navigation-box_prev">
+					<button class="portfolio-button portfolio-button_prev">
+						<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+					</button>
+					<div class="portfolio-thumbnails">
+						<div class="portfolio-thumbnails__thumbnail"><img src="assets/img/works/first.png" alt="First"></div>
+						<div class="portfolio-thumbnails__thumbnail"><img src="assets/img/works/second.png" alt="Second"></div>
+						<div class="portfolio-thumbnails__thumbnail active"><img src="assets/img/works/third.png" alt="Third"></div>
+
+					</div>
+				</div>
+				<div class="navigation-box navigation-box_next">
+					<button class="portfolio-button portfolio-button_next">
+						<i class="fa fa-hand-o-down" aria-hidden="true"></i>
+					</button>
+					<div class="portfolio-thumbnails">
+						<div class="portfolio-thumbnails__thumbnail"><img src="assets/img/works/first.png" alt="First"></div>
+						<div class="portfolio-thumbnails__thumbnail active"><img src="assets/img/works/second.png" alt="Second"></div>
+						<div class="portfolio-thumbnails__thumbnail"><img src="assets/img/works/third.png" alt="Third"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<sectoin class="form">
+			
+			<form method="POST" action="http://formspree.io/kisilwww@gmail.com">
+			  <input type="text" name="name" placeholder="You name">
+			  <input type="email" name="email" placeholder="Your email"> 
+			  <textarea name="message" placeholder="Your message"></textarea>
+			  <button type="submit">Send</button>
+			</form>
+
+		</sectoin>
+
+		<script src="assets/js/libs.js" defer></script>
+		<script src="assets/js/app.js" defer></script>
+		<script src="parallax.js"></script>
+		<script>
+		$('.parallax-window').parallax({imageSrc: 'img/firewatch.jpg'})
+		</script>
+		<script src="js/classie.js"></script>
+		<script src="js/demo1.js"></script>
+	</body>
+</html>
