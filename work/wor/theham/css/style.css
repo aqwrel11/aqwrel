@@ -610,6 +610,7 @@ h2:after{
 }
 .news-card{
 	position: relative;
+	width: 265px;
 }
 .date{
 	position: absolute;
