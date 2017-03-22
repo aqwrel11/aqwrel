@@ -99,7 +99,7 @@ header .txt{
 	min-height: 350px;
 }
 .options{
-	height: 350px;
+	min-height: 350px;
 	text-align: center;
 
 }
@@ -598,7 +598,7 @@ h2:after{
 }
 
 .news{
-	height: 900px;
+	min-height: 900px;
 }
 .news h2{
 	margin-bottom: 75px;
