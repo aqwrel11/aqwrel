@@ -101,9 +101,10 @@ a{
 }
 
 footer{
+  padding-top: 50px;
   text-align: center;
-  background: rgba(250, 125, 47, 1);
-  min-height: 20vh;
+  background: rgba(247, 94, 37, 1);
+  min-height: 32vh;
   z-index: 2;
   color: white;
   font-weight: bold;
@@ -130,6 +131,18 @@ footer button{
   position: absolute;
   top:-25px;
   right: 0;
+}
+.wrapp-foo1{
+  background: url(img/world.png);
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 150px;
+  height: 150px;
+}
+.copir{
+  background: rgba(250, 125, 47, 1);
+  height: 40px;
+  padding-top: 10px;
 }
 .portfolio-slider__projects-container .portfolio-projects .project .word, .portfolio-slider__projects-container .portfolio-projects .project .letter {
     font-size: inherit;
