@@ -60,7 +60,10 @@
         </script>
 </head>
 <body>
-	
+	  <div class="loaderArea">
+	   <div class="loader"></div>
+	  </div>
+
 	<header class="parallax-window" data-parallax="scroll" data-image-src="img/firewatch.jpg">
 		<div class="overlay overlay-door">
 			<button type="button" class="overlay-close">Close</button>
@@ -299,6 +302,14 @@
 	 
 	});
 	 
+</script>
+  <script>
+  $(window).on('load', function () {
+    $preloader = $('.loaderArea'),
+      $loader = $preloader.find('.loader');
+    $loader.fadeOut();
+    $preloader.delay(350).fadeOut('slow');
+  });
 </script>
 </body>
 </html>
