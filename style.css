@@ -1,0 +1,54 @@
+body{
+	height: 90vh;
+	background: url(img/body_bg.jpg) no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.cmd{
+	width: 70%;
+	height: 70vh;
+	background: #000;
+	margin-left: 20%;
+	margin-top: 10vh;
+	border: 2px solid #4b7b9c;
+	position: relative;
+	
+	
+}
+
+.rgh{
+	margin-left: 10px;
+}
+
+.top_mnu{
+	height: 4vh;
+	background: #5c95bc;
+	z-index: 999;
+
+}
+.text-right{
+	position: absolute;
+	right: 10px;
+}
+.text-right img{
+	margin-left: 10px;
+}
+.close{
+	background: red;
+}
+
+.text{
+	width: 100%;
+	color: #fff;
+	padding: 10px;
+	position: absolute;
+	overflow-y: auto;
+	height: 66vh;
+}
+.text p{
+	margin-bottom: -0.5em;
+}
+#cmd{
+	margin-top: 5px;
+}
