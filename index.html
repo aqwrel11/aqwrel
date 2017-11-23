@@ -2,268 +2,103 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Портфолио | Консоль</title>
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
+	<title>FindThePair</title>
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
 <body>
-	
-	<div class="cmd">
+	<div class="game-wrapp">
 		
-		<div class="top_mnu">
+		<nav>
 			
-			<span>
+			<ul>
+				<li onclick="show('play')">Играть</li>
+				<li onclick="show('sett')">Настройки</li>
+				<li onclick="show('record')">Рекорды</li>
+				<li onclick="window.close()">Выход</li>
+			</ul>
 
-				<img src="img/cmd.png" width="16px" height="16px" alt="" class="rgh">
+		</nav>
+		
+		<div class="setting" style="display: none; z-index: 1;" id="play">
+			
+			<h2>Выберите сложность</h2>
 
-				C:\Windows\Sysytem32\Cmd.exe
-
-			</span>
-
-			<span class="text-right">
-				<img src="img/svg/001-minimize.svg" width="16px" height="16px" alt="">
-				<img src="img/svg/002-full-screen.svg" width="16px" height="16px" alt="">
-				<img src="img/svg/003-cross-remove-sign.svg" width="16px" height="16px" alt="">
-			</span>
-
+			<ul>
+				<li><a href="page/veryeasy.html">Очень легко</a></li>
+				<li><a href="page/easy.html">Легко</a></li>
+				<li><a href="page/normal.html">Средне</a></li>
+				<li><a href="page/hard.html">Тяжело</a></li>
+			</ul>
 
 		</div>
 
-		<div class="text">
+		<div class="setting" style="display: none; z-index: 1;" id="sett">
 			
-			<p>Microsoft Windows </p>
-			<p> &#060;c&#062; Корпорация Майкрософт < Microsoft Corp. >. 2017. Все права защищены.</p>
+			<h2>Настройки</h2>
+			<br><br><br>
+			<span >Обложка:</span>
+			<p class="obl-wrapp">
+				<a href="#"> <img src="image/grey.png" alt="" onclick="localStorage.setItem('back', 'grey');"></a>
+				<a href="#"> <img src="image/red.png" alt="" onclick="localStorage.setItem('back', 'red');"></a>
+			</p>
+			
+			
 
-			<div id="cmd">
-				
+		</div>
+
+		<div class="setting" style="display: none; z-index: 1;" id="record">
+			
+			<h2>Рекорды</h2>
+			<div class="korpus">
+			  <input type="radio" name="odin" checked="checked" id="vkl1"/>
+			  <label for="vkl1">Очень легко</label>
+			  <input type="radio" name="odin" id="vkl2"/>
+			  <label for="vkl2">Легко</label>
+			  <input type="radio" name="odin" id="vkl3"/>
+			  <label for="vkl3">Средне</label>
+			  <input type="radio" name="odin" id="vkl4"/>
+			  <label for="vkl4">Тяжело</label>
+			  <div id="veryez"></div>
+			  <div id="easy"></div>
+			  <div id="norm"></div>
+			  <div id="hard"></div>
 			</div>
 
-			<div class="terminal"></div>
-
 		</div>
 
-	</div>
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script>
-		
-		var greeting = "Привет! Меня зовут Паша и это мое портфолио ;) </br> Для получения информации про меня введи <span style='color:red'>info </span> </br> Посмотреть умения <span style='color:red'> skills </span> </br> Перейти в обычный режим введи <span style='color:red'> normal </span> </br> Очистить консоль <span style='color:red'>clear </span> </br>Посмотреть контакты <span style='color:red'> contact </span> ", 
-	    cursor = "<span> </span>",
-	    cmd = $('#cmd');
 
-		function type(el,text,pos,no){
-		    ctext = text.substring(0,pos)+(pos%2?cursor:cursor);
-		    $(el).html(ctext);
-		    if(pos==text.length){
-		        $(el).html(text+cursor);
-		    }else{
-		        window.setTimeout('type("'+el+'","'+text+'",'+(pos+1)+','+1+');',70);
+	</div>
+
+	<script>
+		function show(id) {
+
+		    var x = document.getElementById(id);
+		    if (x.style.display === "none") {
+		        x.style.display = "block";
+		        x.style.zIndex += "1" 
+		    } else {
+		        x.style.display = "none";
 		    }
 		}
-
-		$(document).ready(function(){
-		    cmd.append(cursor);
-		    type('#cmd',greeting,0);
-		})
-
-
 	</script>
-
-	<script>
-		
-$(document).ready(function() {
-		"use strict";
-
-		// UTILITY
-		function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min)) + min;
-		}
-		// END UTILITY
-
-		// COMMANDS
-		function clear() {
-				terminal.text("");
-		}
-
-		function info() {
-				terminal.append(" </br> Name: Kisil Pavel </br> Age: 19 </br> Adress: Dnipro </br> ");
-		}
-
-		function normal() {
-			 terminal.append(" </br> " + window.open('normal/index.html') + " </br> ");
-		}
-
-		function skills() {
-				terminal.append(" </br> html: 4.5 </br> css: 4.5 </br> js: 3.0 </br> jquery: 3.0 </br> git: 4.0 </br> scss: 3.0 </br> svg: 3.0 </br> bootstrap: 4.0 </br> ");
-		}
-		function contact() {
-				terminal.append(" </br> E-mail: Kisilwww@gmail.com </br> Tel: +30994901224 </br> ");
-		}
 	
-		// END COMMANDS
+	<script>
+		localVery = localStorage.getItem('veryez');
+		LocalNameVery = localStorage.getItem('very');
+		document.getElementById("veryez").innerHTML = " " + LocalNameVery + " - " + localVery;
 
-		var title = $(".title");
-		var terminal = $(".terminal");
-		var prompt = " ";
-		var path = " ~";
+		localEz = localStorage.getItem('easy');
+		LocalNameEz = localStorage.getItem('ez');
+		document.getElementById("easy").innerHTML = " " + LocalNameEz + " - " + localEz ;
 
-		var commandHistory = [];
-		var historyIndex = 0;
+		localNorm = localStorage.getItem('norm');
+		LocalNameNormals = localStorage.getItem('normals');
+		document.getElementById("norm").innerHTML = " " + LocalNameNormals + " - " +localNorm;
 
-		var command = "";
-		var commands = [{
-						"name": "clear",
-						"function": clear
-				}, 
-				{
-						"name": "skills",
-						"function": skills
-				},
-				{
-						"name": "info",
-						"function": info
-				},
-				{
-						"name": "contact",
-						"function": contact
-				},
-				{
-						"name": "normal",
-						"function": normal
-				}];
-
-function processCommand() {
-		var isValid = false;
-
-		// Create args list by splitting the command
-		// by space characters and then shift off the
-		// actual command.
-
-		var args = command.split(" ");
-		var cmd = args[0];
-		args.shift();
-
-		// Iterate through the available commands to find a match.
-		// Then call that command and pass in any arguments.
-		for (var i = 0; i < commands.length; i++) {
-				if (cmd === commands[i].name) {
-						commands[i].function(args);
-						isValid = true;
-						break;
-				}
-		}
-
-		// No match was found...
-		if (!isValid) {
-				terminal.append( " </br> " + command + " - Не является внутреней командой" + " </br> ");
-		}
-
-		// Add to command history and clean up.
-		commandHistory.push(command);
-		historyIndex = commandHistory.length;
-		command = "";
-}
-
-function displayPrompt() {
-		terminal.append("<span class=\"prompt\">" + prompt + "</span> ");
-		terminal.append("<span class=\"path\">" + path + "</span> ");
-}
-
-// Delete n number of characters from the end of our output
-function erase(n) {
-		command = command.slice(0, -n);
-		terminal.html(terminal.html().slice(0, -n));
-}
-
-function clearCommand() {
-		if (command.length > 0) {
-				erase(command.length);
-		}
-}
-
-function appendCommand(str) {
-		terminal.append(str);
-		command += str;
-}
-
-/*
-	//	Keypress doesn't catch special keys,
-	//	so we catch the backspace here and
-	//	prevent it from navigating to the previous
-	//	page. We also handle arrow keys for command history.
-	*/
-
-$(document).keydown(function(e) {
-		e = e || window.event;
-		var keyCode = typeof e.which === "number" ? e.which : e.keyCode;
-
-		// BACKSPACE
-		if (keyCode === 8 && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
-				e.preventDefault();
-				if (command !== "") {
-						erase(1);
-				}
-		}
-
-		// UP or DOWN
-		if (keyCode === 38 || keyCode === 40) {
-				// Move up or down the history
-				if (keyCode === 38) {
-						// UP
-						historyIndex--;
-						if (historyIndex < 0) {
-								historyIndex++;
-						}
-				} else if (keyCode === 40) {
-						// DOWN
-						historyIndex++;
-						if (historyIndex > commandHistory.length - 1) {
-								historyIndex--;
-						}
-				}
-
-				// Get command
-				var cmd = commandHistory[historyIndex];
-				if (cmd !== undefined) {
-						clearCommand();
-						appendCommand(cmd);
-				}
-		}
-});
-
-$(document).keypress(function(e) {
-		// Make sure we get the right event
-		e = e || window.event;
-		var keyCode = typeof e.which === "number" ? e.which : e.keyCode;
-
-		// Which key was pressed?
-		switch (keyCode) {
-				// ENTER
-				case 13:
-						{
-								terminal.append("\n");
-
-								processCommand();
-								displayPrompt();
-								break;
-						}
-				default:
-						{
-								appendCommand(String.fromCharCode(keyCode));
-						}
-		}
-});
-
-// Set the window title
-title.text("1. marc@mbp: ~ (zsh)");
-
-// Get the date for our fake last-login
-var date = new Date().toString(); date = date.substr(0, date.indexOf("GMT") - 1);
-
-// Display last-login and promt
-terminal.append(""); displayPrompt();
-});
+		localHard = localStorage.getItem('hard');
+		LocalNameHardy = localStorage.getItem('hardy');
+		document.getElementById("hard").innerHTML = " " + LocalNameHardy + " - " + localHard;
 	</script>
 
 </body>
